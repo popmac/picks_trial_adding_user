@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :development do
