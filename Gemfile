@@ -14,6 +14,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-i18n'
+gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'tether-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
