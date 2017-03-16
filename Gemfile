@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-i18n'
 gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'tether-rails'
 
 group :development, :test do
   gem 'byebug'
