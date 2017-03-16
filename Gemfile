@@ -14,6 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'rails-i18n'
+gem 'bootstrap', '~> 4.0.0.alpha4'
 
 group :development, :test do
   gem 'byebug'
