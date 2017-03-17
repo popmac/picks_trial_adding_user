@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  namespace :portal do
+  namespace :portal, path: '/' do
     root 'top#index'
   end
 end
