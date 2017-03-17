@@ -1,9 +1,9 @@
 module ApplicationHelper
   def document_title
     if @title.present?
-      "#{@title} | BackofficePicks"
+      "#{@title} | PicksTrialAddingUser"
     else
-      'BackofficePicks'
+      'PicksTrialAddingUser'
     end
   end
 end
