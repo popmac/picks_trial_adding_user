@@ -1,0 +1,2 @@
+class AccountEmailToken < ApplicationRecord
+end
