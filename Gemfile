@@ -18,6 +18,7 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'tether-rails'
 gem 'font-awesome-rails'
 gem 'email_validator'
+gem 'mail-iso-2022-jp'
 
 group :development, :test do
   gem 'byebug'
