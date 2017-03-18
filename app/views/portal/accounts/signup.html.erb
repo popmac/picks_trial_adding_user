@@ -1,0 +1,17 @@
+<%
+  @title = 'アカウント登録'
+  options = {
+    url: send_mail_portal_accounts_path,
+    method: :patch
+  }
+%>
+
+<h1><%= @title %></h1>
+
+<%= form_for @token, options do |f| %>
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+    <%= f.submit '送信する', class: 'btn btn-info' %>
+<% end %>
