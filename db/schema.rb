@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170317111055) do
+ActiveRecord::Schema.define(version: 20170319083519) do
 
   create_table "account_email_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                         null: false
@@ -19,6 +19,26 @@ ActiveRecord::Schema.define(version: 20170317111055) do
     t.boolean  "used",                          default: false, null: false
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "email",                             null: false
+    t.string   "email_for_index",                   null: false
+    t.string   "family_name",                       null: false
+    t.string   "given_name",                        null: false
+    t.string   "family_name_kana",                  null: false
+    t.string   "given_name_kana",                   null: false
+    t.string   "hashed_password"
+    t.integer  "gender",            default: 0,     null: false
+    t.date     "birthday"
+    t.string   "company",                           null: false
+    t.string   "department",                        null: false
+    t.string   "official_position",                 null: false
+    t.boolean  "deleted",           default: false, null: false
+    t.datetime "deleted_at"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.index ["family_name_kana", "given_name_kana"], name: "index_users_on_family_name_kana_and_given_name_kana", using: :btree
   end
 
 end
