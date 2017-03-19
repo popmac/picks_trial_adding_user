@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170319083519) do
     t.string   "email_for_index",                               null: false
     t.text     "value",           limit: 65535,                 null: false
     t.boolean  "used",                          default: false, null: false
+    t.boolean  "agreement",                     default: false, null: false
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
   end
