@@ -19,6 +19,7 @@ gem 'tether-rails'
 gem 'font-awesome-rails'
 gem 'email_validator'
 gem 'mail-iso-2022-jp'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'byebug'
