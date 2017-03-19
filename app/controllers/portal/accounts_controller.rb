@@ -14,6 +14,9 @@ class Portal::AccountsController < ApplicationController
     end
   end
 
+  def after_send
+  end
+
   private
   def token_params
     params.require(:account_email_token).permit(:email)
