@@ -19,6 +19,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.timestamps
     end
 
+    add_index :users, :email_for_index, unique: true
     add_index :users, [ :family_name_kana, :given_name_kana ]
   end
 end

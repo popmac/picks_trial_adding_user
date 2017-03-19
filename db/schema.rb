@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20170319083519) do
     t.datetime "deleted_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.index ["email_for_index"], name: "index_users_on_email_for_index", unique: true, using: :btree
     t.index ["family_name_kana", "given_name_kana"], name: "index_users_on_family_name_kana_and_given_name_kana", using: :btree
   end
 
