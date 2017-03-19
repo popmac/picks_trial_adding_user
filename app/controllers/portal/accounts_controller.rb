@@ -19,6 +19,6 @@ class Portal::AccountsController < ApplicationController
 
   private
   def token_params
-    params.require(:account_email_token).permit(:email)
+    params.require(:account_email_token).permit(:email, :agreement)
   end
 end

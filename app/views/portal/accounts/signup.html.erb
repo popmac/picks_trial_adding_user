@@ -8,7 +8,15 @@
 
 <h1><%= @title %></h1>
 
+<%= link_to "利用規約", "#" %>
+
 <%= form_for @token, options do |f| %>
+  <div class="form-group">
+    <%= f.label :agreement do %>
+      <%= f.check_box :agreement %>
+      <span>利用規約に同意する</span>
+    <% end %>
+  </div>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.text_field :email %>
