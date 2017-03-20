@@ -70,6 +70,20 @@ RSpec.describe User, type: :model do
       expect(user2).not_to be_valid
     end
 
+    example 'new_passwordが半角英小文字大文字数字以外は無効' do
+      user = build(:user,
+        new_password: 'Password1!',
+        new_password_confirmation: 'Password1!')
+      expect(user).not_to be_valid
+    end
+
+    example 'new_passwordが8文字以上無ければ無効' do
+      user = build(:user,
+        new_password: 'p',
+        new_password_confirmation: 'p')
+      expect(user).not_to be_valid
+    end
+
     example 'birthdayが今日より前なら有効' do
       user = build(:user, birthday: Date.yesterday)
       expect(user).to be_valid
