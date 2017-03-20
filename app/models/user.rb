@@ -92,4 +92,24 @@ class User < ApplicationRecord
   validates :company, presence: true, length: { maximum: 100 }
   validates :department, presence: true, length: { maximum: 100 }
   validates :official_position, presence: true, length: { maximum: 100 }
+
+  def full_name=(full_name)
+    names = full_name.split(' ', 2)
+    self.family_name = names[0]
+    self.given_name = names[1]
+  end
+
+  def full_name_kana=(full_name_kana)
+    names = full_name_kana.split(' ', 2)
+    self.family_name_kana = names[0]
+    self.given_name_kana = names[1]
+  end
+
+  def full_name
+    [ family_name, given_name ].join(' ')
+  end
+
+  def full_name_kana
+    [ family_name_kana, given_name_kana ].join(' ')
+  end
 end
