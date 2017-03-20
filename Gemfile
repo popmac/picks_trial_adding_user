@@ -20,6 +20,7 @@ gem 'font-awesome-rails'
 gem 'email_validator'
 gem 'mail-iso-2022-jp'
 gem 'bcrypt'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'byebug'

@@ -239,6 +239,7 @@ DEPENDENCIES
   launchy
   mail-iso-2022-jp
   mysql2 (= 0.3.18)
+  nokogiri
   pry-byebug
   pry-rails
   rails (= 5.0.0.1)
