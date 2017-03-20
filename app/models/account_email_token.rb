@@ -12,6 +12,14 @@ class AccountEmailToken < ApplicationRecord
     self.value = AccountEmailToken.create_salt
   end
 
+  def token_used
+    update_column(:used, true)
+  end
+
+  def within_time
+    created_at > Time.now - 48.hours
+  end
+
   class << self
     def create_salt
       d = Digest::SHA1.new

@@ -1,0 +1,56 @@
+ja:
+  activerecord:
+    models:
+      user: 会員
+    attributes:
+      user:
+        email: メールアドレス
+        new_password: パスワード
+        new_password_confirmation: パスワードの確認
+        family_name: 氏名（姓）
+        given_name: 氏名（名）
+        family_name_kana: フリガナ（セイ）
+        given_name_kana: フリガナ（メイ）
+        birthday: 生年月日
+        gender: 性別
+        gender_0: 男
+        gender_1: 女
+        company: 会社名
+        department: 所属部署
+        official_position: 役職
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: は既に登録されています。
+              invalid: の書式に誤りがあります。
+              blank: を入力してください。
+            family_name:
+              blank: を入力してください。
+              invalid: を正しく入力してください。
+            given_name:
+              blank: を入力してください。
+              invalid: を正しく入力してください。
+            family_name_kana:
+              blank: を入力してください。
+              invalid: はカタカナで入力してください。
+            given_name_kana:
+              blank: を入力してください。
+              invalid: はカタカナで入力してください。
+            new_password:
+              blank: を入力してください。
+              invalid: は半角英小文字大文字数字[a-z, A-Z, 0-9]にしてください。
+              too_short: は8文字以上で入力してください。
+              too_long: は100文字以内で入力してください。
+            new_password_confirmation:
+              confirmation: の入力がパスワードと一致しません。
+            company:
+              blank: を入力してください。
+              too_long: は100文字以内で入力してください。
+            department:
+              blank: を入力してください。
+              too_long: は100文字以内で入力してください。
+            official_position:
+              blank: を入力してください。
+              too_long: は100文字以内で入力してください。
