@@ -1,20 +1,12 @@
 class AccountEmailToken < ApplicationRecord
 
-  validates :agreement, :acceptance =>true
-
   before_validation do
     self.email_for_index = email.downcase if email
   end
 
-  validates :email, presence: true, email: { allow_blank: true }
+  validates :agreement, :acceptance =>true
 
-  # validates :email_for_index, uniqueness: { allow_blank: true }
-  # after_validation do
-  #   if errors.include?(:email_for_index)
-  #     errors.add(:email, :taken)
-  #     errors.delete(:email_for_index)
-  #   end
-  # end
+  validates :email, presence: true, email: { allow_blank: true }
 
   before_save do
     self.value = AccountEmailToken.create_salt
