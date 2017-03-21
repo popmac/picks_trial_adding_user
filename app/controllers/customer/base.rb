@@ -1,4 +1,5 @@
 class Customer::Base < ApplicationController
+  before_action :authorize
 
   private
   def current_user
@@ -8,4 +9,11 @@ class Customer::Base < ApplicationController
   end
 
   helper_method :current_user
+
+  def authorize
+    unless current_user
+      flash.notice = 'ログインしてください'
+      redirect_to :customer_login
+    end
+  end
 end

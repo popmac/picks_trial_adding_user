@@ -1,4 +1,6 @@
 class Customer::SessionsController < Customer::Base
+  skip_before_action :authorize
+
   def new
     if current_user
       redirect_to :customer_root
