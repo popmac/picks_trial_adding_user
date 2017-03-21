@@ -8,4 +8,10 @@ Rails.application.routes.draw do
       get :thanks, on: :collection
     end
   end
+  namespace :customer do
+    root 'articles#index', as: :root
+    get 'login' => 'sessions#new', as: :login
+    resource :session, only: [ :create, :destroy ]
+    resources :articles
+  end
 end
