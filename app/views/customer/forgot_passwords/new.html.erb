@@ -1,16 +1,10 @@
 <h2>パスワードを忘れた方</h2>
+<p>メールアドレスを入力し、届いたメールに記載されているリンクをクリックしてください。</p>
 
 <%= form_for @form, url: :customer_forgot_password do |f| %>
-  <%= markup do |m|
-    m.div(flash[:alert], class: 'message danger') if flash[:alert].present?
-    m.div(flash[:notice], class: 'message info') if flash[:notice].present?
-    m.p 'メールアドレスを入力し、届いたメールに記載されているリンクをクリックしてください。'
-    m.div(class: 'form-group') do
-      m << f.label(:email, 'メールアドレス')
-      m << f.email_field(:email, class: 'form-control')
-    end
-    m.div do
-      m << f.submit('送信する', class: 'btn btn-info')
-    end
-  end %>
+  <div class="form-group">
+    <%= f.label :email, 'メールアドレス' %>
+    <%= f.email_field :email %>
+  </div>
+    <%= f.submit '送信する', class: 'btn btn-info' %>
 <% end %>

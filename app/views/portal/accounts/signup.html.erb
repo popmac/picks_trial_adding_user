@@ -11,15 +11,18 @@
 <%= link_to "利用規約", "#" %>
 
 <%= form_for @token, options do |f| %>
+  <% p = FormPresenter.new(f, self) %>
   <div class="form-group">
     <%= f.label :agreement do %>
       <%= f.check_box :agreement %>
       <span>利用規約に同意する</span>
     <% end %>
+    <%= p.error_messages_for(:agreement) %>
   </div>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.email_field :email, required: true %>
+    <%= p.error_messages_for(:email) %>
   </div>
-    <%= f.submit '送信する', data: { disable_with: "送信中..." }, class: 'btn btn-info' %>
+  <%= f.submit '送信する', data: { disable_with: "送信中..." }, class: 'btn btn-info' %>
 <% end %>
