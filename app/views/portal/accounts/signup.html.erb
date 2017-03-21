@@ -19,7 +19,7 @@
   </div>
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email %>
+    <%= f.email_field :email, required: true %>
   </div>
     <%= f.submit '送信する', data: { disable_with: "送信中..." }, class: 'btn btn-info' %>
 <% end %>
