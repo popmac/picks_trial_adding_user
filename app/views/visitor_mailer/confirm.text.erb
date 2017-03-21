@@ -1,0 +1,22 @@
+<%
+  domain = if Rails.env.production?
+      'https://inober.com'
+    elsif Rails.env.staging?
+      'https://staging.inober.com'
+    else
+      'http://localhost:3000'
+    end
+  url = domain + "/accounts/new?id=#{@token.id}&token=#{@token.value}"
+%>
+
+この度はアカウント登録をお申込みいただき誠にありがとうございます。
+
+現在はまだ仮登録の状態です。
+本登録を完了するために、以下のURLにアクセスしユーザ情報を登録してください。
+
+<%= url %>
+
+■ご注意
+このメールは、INOBERへの登録をお申込みいただいた方に自動送信しています。本メールにお心当りがない場合は、誠に恐れ入りますが弊社サポートまでお問い合せくださいますようお願いいたします。
+
+このメールに記載されたURLの有効期限は24時間です。有効期限切れの場合は、お手数ですが改めて新規登録手続きを行なってください。

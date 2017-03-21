@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    attributes:
+      account_email_token:
+        email: メールアドレス
+    errors:
+      models:
+        account_email_token:
+          attributes:
+            email:
+              invalid: の書式に誤りがあります。
+              blank: を入力してください。
