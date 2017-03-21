@@ -12,7 +12,7 @@
 <%= form_for @user, options do |f| %>
   <div class="form-group">
     <%= f.label :email %>
-    <%= f.text_field :email, readonly: true %>
+    <%= f.email_field :email, readonly: true %>
   </div>
   <div class="form-group">
     <%= f.label '姓' %>
