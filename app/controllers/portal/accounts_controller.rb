@@ -5,7 +5,7 @@ class Portal::AccountsController < ApplicationController
 
   def send_mail
     @token = AccountEmailToken.new(token_params)
-    if @token.save && UserMailer.confirm(@token).deliver_now
+    if @token.save && VisitorMailer.confirm(@token).deliver_now
       flash.notice = 'メールアドレス認証メールを送信しました。'
       redirect_to [ :after_send, :portal, :accounts ]
     else

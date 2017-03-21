@@ -1,4 +1,4 @@
-class UserMailer < ActionMailer::Base
+class VisitorMailer < ActionMailer::Base
   # domain = if Rails.env.production? || Rails.env.staging?
   #     'inober.com'
   #   else
