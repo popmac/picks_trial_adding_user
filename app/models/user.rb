@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :password_tokens, dependent: :destroy
+
   include StringNormalizer
 
   before_validation do
