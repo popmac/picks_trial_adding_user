@@ -23,7 +23,7 @@ class Customer::ForgotPasswordsController < Customer::Base
         @token = PasswordToken.new(user_id: @user.id)
         if @token.save && CustomerMailer.forgot_password(@user, @token).deliver_now
           flash.notice = 'メールを送信しました。'
-          redirect_to :sent_customer_forgot_password
+          redirect_to :after_send_customer_forgot_password
         else
           flash.now.alert = 'メールの送信に失敗しました。'
           render action: 'new'
@@ -35,7 +35,7 @@ class Customer::ForgotPasswordsController < Customer::Base
     end
   end
 
-  def sent
+  def after_send
   end
 
   def input_password

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     get 'login' => 'sessions#new', as: :login
     resource :session, only: [ :create, :destroy ]
     resource :forgot_password, only: [ :new, :create ] do
-      get :sent
+      get :after_send
       patch :change_password
     end
     get 'input_password' => 'forgot_passwords#input_password'
