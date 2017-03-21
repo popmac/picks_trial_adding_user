@@ -13,6 +13,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :company, null: false
       t.string :department, null: false
       t.string :official_position, null: false
+      t.boolean :suspended, null:false, default: false
       t.boolean :deleted, null:false, default: false
       t.datetime :deleted_at
 

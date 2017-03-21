@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20170319083519) do
     t.string   "company",                           null: false
     t.string   "department",                        null: false
     t.string   "official_position",                 null: false
+    t.boolean  "suspended",         default: false, null: false
     t.boolean  "deleted",           default: false, null: false
     t.datetime "deleted_at"
     t.datetime "created_at",                        null: false
