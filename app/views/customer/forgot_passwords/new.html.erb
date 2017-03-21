@@ -7,7 +7,7 @@
     m.p 'メールアドレスを入力し、届いたメールに記載されているリンクをクリックしてください。'
     m.div(class: 'form-group') do
       m << f.label(:email, 'メールアドレス')
-      m << f.text_field(:email, class: 'form-control')
+      m << f.email_field(:email, class: 'form-control')
     end
     m.div do
       m << f.submit('送信する', class: 'btn btn-info')
