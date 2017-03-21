@@ -1,0 +1,2 @@
+class PasswordToken < ApplicationRecord
+end
