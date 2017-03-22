@@ -30,6 +30,8 @@ class User < ApplicationRecord
   include PersonalNameHolder
   include PasswordHolder
 
+  mount_uploader :avatar, AvatarUploader
+
   has_many :password_tokens, dependent: :destroy
 
   attr_accessor :new_password, :new_password_confirmation
