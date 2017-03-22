@@ -5,7 +5,6 @@ class PasswordToken < ApplicationRecord
     self.value = PasswordToken.create_salt
   end
 
-  # 発行されたPasswordTokenのURLでパスワード変更済
   def token_used
     update_column(:used, true)
   end

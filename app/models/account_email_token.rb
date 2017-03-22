@@ -1,14 +1,7 @@
 class AccountEmailToken < ApplicationRecord
-  include StringNormalizer
-
-  before_validation do
-    self.email = normalize_as_email(email)
-    self.email_for_index = email.downcase if email
-  end
+  include EmailHolder
 
   validates :agreement, :acceptance =>true
-
-  validates :email, presence: true, email: { allow_blank: true }
 
   before_save do
     self.value = AccountEmailToken.create_salt
