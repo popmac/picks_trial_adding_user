@@ -92,10 +92,16 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
 
-    example '他の職員と重複したemailは無効' do
+    example '重複したemailは無効' do
       user1 = create(:user)
       user2 = build(:user, email: user1.email)
       expect(user2).not_to be_valid
+    end
+
+    example '既にemailが存在するが、deleted_flagがtrueなら有効' do
+      create(:user, email: 'hoge1@hoge.com', deleted_flag: true)
+      user = build(:user, email: 'hoge1@hoge.com')
+      expect(user).to be_valid
     end
 
     example 'new_passwordが半角英小文字大文字数字以外は無効' do
