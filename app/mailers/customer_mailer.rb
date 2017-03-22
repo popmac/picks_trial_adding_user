@@ -1,10 +1,9 @@
 class CustomerMailer < ActionMailer::Base
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.customer_mailer.forgot_password.subject
-  #
+  # domain = if Rails.env.production? || Rails.env.staging?
+  #     'inober.com'
+  #   else
+  #     'example.com'
+  #   end
   domain = 'example.com'
   default :charset => 'ISO-2022-JP', :from => "no-reply@#{domain}"
 
