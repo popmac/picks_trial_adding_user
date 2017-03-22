@@ -16,8 +16,6 @@
 #  department        :string(255)      not null
 #  official_position :string(255)      not null
 #  suspended         :boolean          default("0"), not null
-#  deleted_flag      :boolean          default("0"), not null
-#  deleted_at        :datetime
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
@@ -96,12 +94,6 @@ RSpec.describe User, type: :model do
       user1 = create(:user)
       user2 = build(:user, email: user1.email)
       expect(user2).not_to be_valid
-    end
-
-    example '既にemailが存在するが、deleted_flagがtrueなら有効' do
-      create(:user, email: 'hoge1@hoge.com', deleted_flag: true)
-      user = build(:user, email: 'hoge1@hoge.com')
-      expect(user).to be_valid
     end
 
     example 'new_passwordが半角英小文字大文字数字以外は無効' do

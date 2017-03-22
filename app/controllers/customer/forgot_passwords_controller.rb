@@ -15,9 +15,6 @@ class Customer::ForgotPasswordsController < Customer::Base
       if @user.suspended?
         flash.now.alert = 'アカウントが停止されています。'
         render action: 'new'
-      elsif !@user.active?
-        flash.now.alert = 'アカウントが削除済みです'
-        render action: 'new'
       else
         @token = PasswordToken.new(user_id: @user.id)
         if @token.save && CustomerMailer.forgot_password(@user, @token).deliver_now

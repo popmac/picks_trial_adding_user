@@ -45,8 +45,6 @@ ActiveRecord::Schema.define(version: 20170321073934) do
     t.string   "department",                        null: false
     t.string   "official_position",                 null: false
     t.boolean  "suspended",         default: false, null: false
-    t.boolean  "deleted_flag",      default: false, null: false
-    t.datetime "deleted_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.index ["family_name_kana", "given_name_kana"], name: "index_users_on_family_name_kana_and_given_name_kana", using: :btree
