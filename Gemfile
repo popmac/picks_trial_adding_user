@@ -21,6 +21,8 @@ gem 'email_validator'
 gem 'mail-iso-2022-jp'
 gem 'bcrypt'
 gem 'nokogiri'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'byebug'
