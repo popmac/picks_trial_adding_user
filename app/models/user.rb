@@ -37,8 +37,7 @@ class User < ApplicationRecord
 
   # allow_blankは必要？
   # Userの情報を編集する時にpasswordが必要かどうかで変わってくる？
-  # validates :email_for_index, uniqueness: { allow_blank: true }
-  validates :email_for_index, uniqueness: true, if: :active?
+  validates :email_for_index, uniqueness: { allow_blank: true }
   # 以下は必要？
   # validates :new_password, presence: true, if: :new_record?
   validates :new_password, presence: true, if: :password_blank?
@@ -50,11 +49,6 @@ class User < ApplicationRecord
   validates :company, presence: true, length: { maximum: 100 }
   validates :department, presence: true, length: { maximum: 100 }
   validates :official_position, presence: true, length: { maximum: 100 }
-
-  def active?
-    user = User.find_by(email_for_index: email_for_index, deleted_flag: false)
-    user.present?
-  end
 
   def password_blank?
     hashed_password.blank?

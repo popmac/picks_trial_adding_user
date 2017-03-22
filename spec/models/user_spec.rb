@@ -96,12 +96,6 @@ RSpec.describe User, type: :model do
       expect(user2).not_to be_valid
     end
 
-    example '既にemailが存在するが、deleted_flagがtrueなら有効' do
-      create(:user, email: 'hoge1@hoge.com', deleted_flag: true)
-      user = build(:user, email: 'hoge1@hoge.com')
-      expect(user).to be_valid
-    end
-
     example 'new_passwordが半角英小文字大文字数字以外は無効' do
       user = build(:user,
         new_password: 'Password1!',

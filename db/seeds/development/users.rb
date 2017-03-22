@@ -27,7 +27,7 @@ given_names = %w{
   梅子:ウメコ:umeko
 }
 
-2.times do |n|
+1.times do |n|
   fn = family_names[n % 4].split(':')
   gn = given_names[n % 5].split(':')
 
@@ -44,7 +44,5 @@ given_names = %w{
     department:'テスト部',
     official_position: 'テスト長',
     suspended: n == 0,
-    deleted_flag: n == 1,
-    deleted_at: n == 1 ? Time.now.yesterday : nil
   )
 end
