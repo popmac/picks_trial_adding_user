@@ -1,4 +1,4 @@
-class Portal::AccountsController < ApplicationController
+class Portal::AccountsController < Portal::Base
   def signup
     @token = AccountEmailToken.new
   end
