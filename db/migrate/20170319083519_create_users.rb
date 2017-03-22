@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.0]
       t.string :family_name_kana, null: false
       t.string :given_name_kana, null: false
       t.string :hashed_password
+      t.text :avatar, null: false
       t.integer :gender, null: false, default: 0
       t.date :birthday
       t.string :company, null: false

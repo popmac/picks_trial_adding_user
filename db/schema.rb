@@ -32,21 +32,22 @@ ActiveRecord::Schema.define(version: 20170321073934) do
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "email",                             null: false
-    t.string   "email_for_index",                   null: false
-    t.string   "family_name",                       null: false
-    t.string   "given_name",                        null: false
-    t.string   "family_name_kana",                  null: false
-    t.string   "given_name_kana",                   null: false
+    t.string   "email",                                           null: false
+    t.string   "email_for_index",                                 null: false
+    t.string   "family_name",                                     null: false
+    t.string   "given_name",                                      null: false
+    t.string   "family_name_kana",                                null: false
+    t.string   "given_name_kana",                                 null: false
     t.string   "hashed_password"
-    t.integer  "gender",            default: 0,     null: false
+    t.text     "avatar",            limit: 65535,                 null: false
+    t.integer  "gender",                          default: 0,     null: false
     t.date     "birthday"
-    t.string   "company",                           null: false
-    t.string   "department",                        null: false
-    t.string   "official_position",                 null: false
-    t.boolean  "suspended",         default: false, null: false
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.string   "company",                                         null: false
+    t.string   "department",                                      null: false
+    t.string   "official_position",                               null: false
+    t.boolean  "suspended",                       default: false, null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
     t.index ["family_name_kana", "given_name_kana"], name: "index_users_on_family_name_kana_and_given_name_kana", using: :btree
   end
 

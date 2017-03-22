@@ -10,6 +10,7 @@
 #  family_name_kana  :string(255)      not null
 #  given_name_kana   :string(255)      not null
 #  hashed_password   :string(255)
+#  avatar            :text(65535)      not null
 #  gender            :integer          default("0"), not null
 #  birthday          :date
 #  company           :string(255)      not null
