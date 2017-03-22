@@ -1,3 +1,31 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                :integer          not null, primary key
+#  email             :string(255)      not null
+#  email_for_index   :string(255)      not null
+#  family_name       :string(255)      not null
+#  given_name        :string(255)      not null
+#  family_name_kana  :string(255)      not null
+#  given_name_kana   :string(255)      not null
+#  hashed_password   :string(255)
+#  gender            :integer          default("0"), not null
+#  birthday          :date
+#  company           :string(255)      not null
+#  department        :string(255)      not null
+#  official_position :string(255)      not null
+#  suspended         :boolean          default("0"), not null
+#  deleted_flag      :boolean          default("0"), not null
+#  deleted_at        :datetime
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_family_name_kana_and_given_name_kana  (family_name_kana,given_name_kana)
+#
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -64,10 +92,16 @@ RSpec.describe User, type: :model do
       expect(user).to be_valid
     end
 
-    example '他の職員と重複したemailは無効' do
+    example '重複したemailは無効' do
       user1 = create(:user)
       user2 = build(:user, email: user1.email)
       expect(user2).not_to be_valid
+    end
+
+    example '既にemailが存在するが、deleted_flagがtrueなら有効' do
+      create(:user, email: 'hoge1@hoge.com', deleted_flag: true)
+      user = build(:user, email: 'hoge1@hoge.com')
+      expect(user).to be_valid
     end
 
     example 'new_passwordが半角英小文字大文字数字以外は無効' do

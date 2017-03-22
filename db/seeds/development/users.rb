@@ -44,7 +44,7 @@ given_names = %w{
     department:'テスト部',
     official_position: 'テスト長',
     suspended: n == 0,
-    deleted: n == 1,
+    deleted_flag: n == 1,
     deleted_at: n == 1 ? Time.now.yesterday : nil
   )
 end

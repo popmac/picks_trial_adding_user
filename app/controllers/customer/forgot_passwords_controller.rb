@@ -15,8 +15,7 @@ class Customer::ForgotPasswordsController < Customer::Base
       if @user.suspended?
         flash.now.alert = 'アカウントが停止されています。'
         render action: 'new'
-      # ここはfind_byの時点で除外できる？
-      elsif @user.deleted?
+      elsif !@user.active?
         flash.now.alert = 'アカウントが削除済みです'
         render action: 'new'
       else

@@ -1,3 +1,31 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                :integer          not null, primary key
+#  email             :string(255)      not null
+#  email_for_index   :string(255)      not null
+#  family_name       :string(255)      not null
+#  given_name        :string(255)      not null
+#  family_name_kana  :string(255)      not null
+#  given_name_kana   :string(255)      not null
+#  hashed_password   :string(255)
+#  gender            :integer          default("0"), not null
+#  birthday          :date
+#  company           :string(255)      not null
+#  department        :string(255)      not null
+#  official_position :string(255)      not null
+#  suspended         :boolean          default("0"), not null
+#  deleted_flag      :boolean          default("0"), not null
+#  deleted_at        :datetime
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_family_name_kana_and_given_name_kana  (family_name_kana,given_name_kana)
+#
+
 class User < ApplicationRecord
   include EmailHolder
   include PersonalNameHolder
@@ -11,7 +39,8 @@ class User < ApplicationRecord
 
   # allow_blankは必要？
   # Userの情報を編集する時にpasswordが必要かどうかで変わってくる？
-  validates :email_for_index, uniqueness: { allow_blank: true }
+  # validates :email_for_index, uniqueness: { allow_blank: true }
+  validates :email_for_index, uniqueness: true, if: :active?
   # 以下は必要？
   # validates :new_password, presence: true, if: :new_record?
   validates :new_password, presence: true, if: :password_blank?
@@ -23,6 +52,11 @@ class User < ApplicationRecord
   validates :company, presence: true, length: { maximum: 100 }
   validates :department, presence: true, length: { maximum: 100 }
   validates :official_position, presence: true, length: { maximum: 100 }
+
+  def active?
+    user = User.find_by(email_for_index: email_for_index, deleted_flag: false)
+    user.present?
+  end
 
   def password_blank?
     hashed_password.blank?
