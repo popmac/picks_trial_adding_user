@@ -32,7 +32,7 @@ FactoryGirl.define do
     given_name '太郎'
     family_name_kana 'ヤマダ'
     given_name_kana 'タロウ'
-    birthday '2017-03-20'
+    birthday { Date.yesterday.to_s }
     gender 0
     company 'テスト会社'
     department 'テスト部'
