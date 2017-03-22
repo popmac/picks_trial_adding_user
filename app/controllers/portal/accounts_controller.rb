@@ -55,7 +55,8 @@ class Portal::AccountsController < Portal::Base
   def user_params
     params.require(:user).permit(
       :email, :family_name, :given_name, :family_name_kana, :given_name_kana,
-      :new_password, :new_password_confirmation, :gender, :birthday, :company, :department, :official_position
+      :new_password, :new_password_confirmation,
+      :avatar, :gender, :birthday, :company, :department, :official_position
     )
   end
 

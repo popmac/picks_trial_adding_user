@@ -1,3 +1,5 @@
+image_path = File.join(Rails.root, "db/fixtures/images/sample-avatar.png")
+
 User.create!(
   email: 'test1@example.com',
   password: 'password',
@@ -5,6 +7,7 @@ User.create!(
   given_name: '太郎',
   family_name_kana: 'ヤマダ',
   given_name_kana: 'タロウ',
+  avatar: File.new(image_path),
   birthday: '2017-03-20',
   gender: 0,
   company: 'テスト会社',
@@ -38,6 +41,7 @@ given_names = %w{
     given_name: gn[0],
     family_name_kana: fn[1],
     given_name_kana: gn[1],
+    avatar: File.new(image_path),
     birthday: '2017-03-20',
     gender: 0,
     company: 'テスト会社',

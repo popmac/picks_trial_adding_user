@@ -47,6 +47,7 @@ class User < ApplicationRecord
   validates :new_password, presence: true, confirmation: true,
     format: { with: PASSWORD_REGEXP, allow_blank: true },
     length: { minimum: 8, maximum: 100 }, if: :new_password?
+  validates :avatar, presence: true
   validate :birthday_cannot_be_in_the_future
   validate :birthday_date_valid
   validates :company, presence: true, length: { maximum: 100 }

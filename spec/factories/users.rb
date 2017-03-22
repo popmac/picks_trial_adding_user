@@ -33,6 +33,7 @@ FactoryGirl.define do
     given_name '太郎'
     family_name_kana 'ヤマダ'
     given_name_kana 'タロウ'
+    avatar File.open(File.join(Rails.root, 'db/fixtures/images/sample-avatar.png'))
     birthday { Date.yesterday.to_s }
     gender 0
     company 'テスト会社'
