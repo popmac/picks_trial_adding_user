@@ -7,33 +7,39 @@
 
 <h2><%= @title %></h2>
 
-<%= render "shared/errors", obj: @user %>
-
 <%= form_for @user, options do |f| %>
+  <% p = FormPresenter.new(f, self) %>
   <div class="form-group">
     <%= f.label :email %>
     <%= f.email_field :email, readonly: true %>
+    <%= p.error_messages_for(:email) %>
   </div>
   <div class="form-group">
-    <%= f.label '姓' %>
+    <%= f.label :family_name, '姓' %>
     <%= f.text_field :family_name %>
-    <%= f.label '名' %>
+    <%= f.label :given_name, '名' %>
     <%= f.text_field :given_name %>
+    <%= p.error_messages_for(:family_name) %>
+    <%= p.error_messages_for(:given_name) %>
   </div>
   <div class="form-group">
-    <%= f.label 'セイ' %>
+    <%= f.label :family_name_kana, 'セイ' %>
     <%= f.text_field :family_name_kana %>
-    <%= f.label 'メイ' %>
+    <%= f.label :given_name_kana, 'メイ' %>
     <%= f.text_field :given_name_kana %>
+    <%= p.error_messages_for(:family_name_kana) %>
+    <%= p.error_messages_for(:given_name_kana) %>
   </div>
   <div class="form-group">
     <%= f.label :new_password %>
     <%= f.password_field :new_password %>
+    <%= p.error_messages_for(:new_password) %>
     <p>※半角英小文字大文字数字の8文字以上で入力してください</p>
   </div>
   <div class="form-group">
     <%= f.label :new_password_confirmation %>
     <%= f.password_field :new_password_confirmation %>
+    <%= p.error_messages_for(:new_password_confirmation) %>
   </div>
   <div class="form-group">
     <%= f.label :gender %>
@@ -46,19 +52,22 @@
     <%= f.label :birthday, for: "member_birthday_1i" %>
     <%= f.date_select :birthday,
       start_year: 1930, end_year: Time.now.year,
-        use_month_numbers: true %>
+      use_month_numbers: true %>
   </div>
   <div class="form-group">
     <%= f.label :company %>
     <%= f.text_field :company %>
+    <%= p.error_messages_for(:company) %>
   </div>
   <div class="form-group">
     <%= f.label :department %>
     <%= f.text_field :department %>
+    <%= p.error_messages_for(:department) %>
   </div>
   <div class="form-group">
     <%= f.label :official_position %>
     <%= f.text_field :official_position %>
+    <%= p.error_messages_for(:official_position) %>
   </div>
     <%= f.submit '送信する', data: { disable_with: "送信中..." }, class: 'btn btn-info' %>
 <% end %>
