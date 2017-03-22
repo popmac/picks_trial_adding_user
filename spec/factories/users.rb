@@ -16,10 +16,14 @@
 #  department        :string(255)      not null
 #  official_position :string(255)      not null
 #  suspended         :boolean          default("0"), not null
-#  deleted           :boolean          default("0"), not null
+#  deleted_flag      :boolean          default("0"), not null
 #  deleted_at        :datetime
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#
+# Indexes
+#
+#  index_users_on_family_name_kana_and_given_name_kana  (family_name_kana,given_name_kana)
 #
 
 FactoryGirl.define do

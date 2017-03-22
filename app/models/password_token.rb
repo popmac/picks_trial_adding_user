@@ -9,6 +9,10 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
+# Indexes
+#
+#  index_password_tokens_on_user_id  (user_id)
+#
 
 class PasswordToken < ApplicationRecord
   belongs_to :user
