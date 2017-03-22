@@ -19,7 +19,7 @@ class Customer::SessionsController < Customer::Base
       if user.suspended?
         flash.alert = 'アカウントが停止されています'
         render action: 'new'
-      elsif user.deleted?
+      elsif user.deleted_flag?
         flash.alert = 'アカウントは削除済みです'
         render action: 'new'
       else
