@@ -14,3 +14,4 @@
 
 # Ignore uploaded images of avatar
 /public/uploads/user/avatar
+/public/uploads/tmp
