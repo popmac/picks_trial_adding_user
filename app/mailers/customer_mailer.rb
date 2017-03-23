@@ -4,7 +4,12 @@ class CustomerMailer < ActionMailer::Base
     else
       'example.com'
     end
-  default :charset => 'ISO-2022-JP', :from => "no-reply@#{domain}"
+
+  if Rails.env.production?
+    default from: "no-reply@#{domain}"
+  else
+    default :charset => 'ISO-2022-JP', :from => "no-reply@#{domain}"
+  end
 
   def forgot_password(user, token)
     @user = user
