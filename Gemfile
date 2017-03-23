@@ -23,6 +23,7 @@ gem 'nokogiri'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mail-iso-2022-jp'
+gem 'fog'
 
 group :development, :test do
   gem 'byebug'
