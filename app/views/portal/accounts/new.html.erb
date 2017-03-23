@@ -44,6 +44,9 @@
   <div class="form-group">
     <%= f.label :avatar %>
     <%= image_tag @user.avatar.url if @user.avatar? %>
+    <% if @user.avatar? && @user.errors.details[:avatar].empty? %>
+      <%= image_tag @user.avatar.url %>
+    <% end %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
     <%= p.error_messages_for(:avatar) %>

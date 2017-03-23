@@ -30,6 +30,7 @@ class User < ApplicationRecord
   include PersonalNameHolder
   include PasswordHolder
 
+  require 'file_size_validator'
   mount_uploader :avatar, AvatarUploader
 
   has_many :password_tokens, dependent: :destroy
@@ -47,7 +48,8 @@ class User < ApplicationRecord
   validates :new_password, presence: true, confirmation: true,
     format: { with: PASSWORD_REGEXP, allow_blank: true },
     length: { minimum: 8, maximum: 100 }, if: :new_password?
-  validates :avatar, presence: true
+  validates :avatar, :presence => true,
+    file_size: { maximum: 1.megabytes.to_i }
   validate :birthday_cannot_be_in_the_future
   validate :birthday_date_valid
   validates :company, presence: true, length: { maximum: 100 }

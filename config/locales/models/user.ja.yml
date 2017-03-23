@@ -11,7 +11,7 @@ ja:
         given_name: 氏名（名）
         family_name_kana: フリガナ（セイ）
         given_name_kana: フリガナ（メイ）
-        avatar: アイコン
+        avatar: アイコン画像
         gender: 性別
         gender_0: 男
         gender_1: 女
@@ -48,6 +48,9 @@ ja:
               invalid: はカタカナで入力してください。
             avatar:
               blank: をアップロードしてください。
+              wrong_size: "のサイズは%{file_size}に設定してください。"
+              size_too_small: "のサイズが小さすぎます。(%{file_size}以上に設定してください)"
+              size_too_big: "のサイズが大きすぎます。(%{file_size}以下に設定してください)"
             company:
               blank: を入力してください。
               too_long: は100文字以内で入力してください。
