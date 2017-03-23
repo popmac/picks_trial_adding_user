@@ -1,6 +1,6 @@
 class CustomerMailer < ActionMailer::Base
   domain = if Rails.env.production?
-      'https://shielded-atoll-18636.herokuapp.com'
+      'heroku.com'
     else
       'example.com'
     end
