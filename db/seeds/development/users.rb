@@ -1,3 +1,8 @@
+# 前回のシードの画像を削除
+require 'fileutils'
+Dir.chdir 'public/uploads/user/avatar'
+FileUtils.rm(Dir.glob('*.*'))
+
 image_path = File.join(Rails.root, "db/fixtures/images/sample-avatar.png")
 
 User.create!(
