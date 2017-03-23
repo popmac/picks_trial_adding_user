@@ -57,4 +57,11 @@ RSpec.configure do |config|
 
   # ファクトリを簡単に呼び出せるよう、FactoryGirlの構文をインクルードする
   config.include FactoryGirl::Syntax::Methods
+
+  # テスト実行後に画像ファイルを削除する
+  config.after(:all) do
+    if Rails.env.test?
+      FileUtils.rm_rf(Dir["#{Rails.root}/spec/support/uploads"])
+    end
+  end
 end

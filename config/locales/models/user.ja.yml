@@ -11,10 +11,11 @@ ja:
         given_name: 氏名（名）
         family_name_kana: フリガナ（セイ）
         given_name_kana: フリガナ（メイ）
-        birthday: 生年月日
+        avatar: アイコン画像
         gender: 性別
         gender_0: 男
         gender_1: 女
+        birthday: 生年月日
         company: 会社名
         department: 所属部署
         official_position: 役職
@@ -26,6 +27,13 @@ ja:
               taken: は既に登録されています。
               invalid: の書式に誤りがあります。
               blank: を入力してください。
+            new_password:
+              blank: を入力してください。
+              invalid: は半角英小文字大文字数字[a-z, A-Z, 0-9]にしてください。
+              too_short: は8文字以上で入力してください。
+              too_long: は100文字以内で入力してください。
+            new_password_confirmation:
+              confirmation: の入力がパスワードと一致しません。
             family_name:
               blank: を入力してください。
               invalid: を正しく入力してください。
@@ -38,13 +46,11 @@ ja:
             given_name_kana:
               blank: を入力してください。
               invalid: はカタカナで入力してください。
-            new_password:
-              blank: を入力してください。
-              invalid: は半角英小文字大文字数字[a-z, A-Z, 0-9]にしてください。
-              too_short: は8文字以上で入力してください。
-              too_long: は100文字以内で入力してください。
-            new_password_confirmation:
-              confirmation: の入力がパスワードと一致しません。
+            avatar:
+              blank: をアップロードしてください。
+              wrong_size: "のサイズは%{file_size}に設定してください。"
+              size_too_small: "のサイズが小さすぎます。(%{file_size}以上に設定してください)"
+              size_too_big: "のサイズが大きすぎます。(%{file_size}以下に設定してください)"
             company:
               blank: を入力してください。
               too_long: は100文字以内で入力してください。
