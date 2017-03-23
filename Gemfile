@@ -22,6 +22,7 @@ gem 'bcrypt'
 gem 'nokogiri'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'mail-iso-2022-jp'
 
 group :development, :test do
   gem 'byebug'
