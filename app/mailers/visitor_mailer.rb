@@ -4,7 +4,7 @@ class VisitorMailer < ActionMailer::Base
     else
       'example.com'
     end
-  default :charset => 'ISO-2022-JP', :from => "no-reply@#{domain}"
+  default from: "no-reply@#{domain}"
 
   def confirm(account_email_token)
     @token = account_email_token
