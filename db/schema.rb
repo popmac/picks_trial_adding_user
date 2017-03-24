@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324095853) do
+ActiveRecord::Schema.define(version: 20170324151321) do
 
   create_table "account_email_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                         null: false
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20170324095853) do
     t.string   "hashed_password"
     t.text     "avatar",            limit: 65535,                 null: false
     t.integer  "gender",                          default: 0,     null: false
-    t.date     "birthday"
+    t.date     "birthday",                                        null: false
     t.string   "company",                                         null: false
     t.string   "department",                                      null: false
     t.string   "official_position",                               null: false
