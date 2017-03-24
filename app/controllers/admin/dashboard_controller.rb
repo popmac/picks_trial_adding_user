@@ -1,2 +1,4 @@
-class Admin::DashboardController < ApplicationController
+class Admin::DashboardController < Admin::Base
+  def index
+  end
 end

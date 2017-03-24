@@ -19,4 +19,7 @@ Rails.application.routes.draw do
     get 'input_password' => 'forgot_passwords#input_password'
     resources :articles
   end
+  namespace :admin do
+    root 'dashboard#index', as: :root
+  end
 end
