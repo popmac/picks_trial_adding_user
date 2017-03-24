@@ -12,7 +12,7 @@
 #  hashed_password   :string(255)
 #  avatar            :text(65535)      not null
 #  gender            :integer          default("0"), not null
-#  birthday          :date
+#  birthday          :date             not null
 #  company           :string(255)      not null
 #  department        :string(255)      not null
 #  official_position :string(255)      not null
