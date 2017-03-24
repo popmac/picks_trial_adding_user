@@ -21,5 +21,7 @@ Rails.application.routes.draw do
   end
   namespace :admin do
     root 'dashboard#index', as: :root
+    get 'login' => 'sessions#new', as: :login
+    resource :session, only: [ :create, :destroy ]
   end
 end
