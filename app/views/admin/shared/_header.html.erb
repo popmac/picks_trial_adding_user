@@ -1,0 +1,7 @@
+<header>
+  <% if current_administrator %>
+    <%= link_to 'BackOfficePicks', :admin_root %>
+  <% else %>
+    <%= link_to 'BackOfficePicks', :admin_login %>
+  <% end %>
+</header>
