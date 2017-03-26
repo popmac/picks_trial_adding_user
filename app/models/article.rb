@@ -14,5 +14,5 @@
 #
 
 class Article < ApplicationRecord
-  mount_uploader :picture, ArticlePictureUploader
+  # mount_uploader :picture, ArticlePictureUploader
 end
