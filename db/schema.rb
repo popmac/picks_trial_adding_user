@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324151321) do
+ActiveRecord::Schema.define(version: 20170326055220) do
 
   create_table "account_email_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                                         null: false
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20170324151321) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.index ["email_for_index"], name: "index_administrators_on_email_for_index", unique: true, using: :btree
+  end
+
+  create_table "articles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "site_url",    limit: 65535
+    t.text     "site_name",   limit: 65535
+    t.text     "title",       limit: 65535
+    t.text     "description", limit: 65535
+    t.text     "picture",     limit: 65535
+    t.boolean  "published",                 default: false, null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "password_tokens", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
