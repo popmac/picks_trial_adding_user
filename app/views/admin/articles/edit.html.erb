@@ -1,0 +1,32 @@
+<% @title = '記事の編集' %>
+<h1><%= @title %></h1>
+
+<%= form_for @article, :url => {:controller => :articles, :action => :update} do |f| %>
+  <div class="form-group">
+    <%= f.label :site_url %>
+    <%= f.text_field :site_url %>
+  </div>
+  <div class="form-group">
+    <%= f.label :site_name %>
+    <%= f.text_field :site_name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+  <div class="form-group">
+    <%= f.label :picture %>
+    <%= image_tag("#{@article.picture}", class: 'site-image') %>
+    <%= f.text_field :picture %>
+    <p>※画像を使用しない場合は、こちらを空欄にしてください</p>
+  </div>
+  <div class="form-group">
+    <%= f.label :published %>
+    <%= f.check_box :published %>
+  </div>
+  <%= f.submit '記事を更新する' %>
+<% end %>

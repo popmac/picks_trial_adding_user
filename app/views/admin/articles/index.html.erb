@@ -1,0 +1,9 @@
+<% @title = '記事一覧管理' %>
+<h2><%= @title %></h2>
+
+<%= link_to '記事を作成する', :new_admin_article, class: 'btn btn-info' %>
+<%= link_to '記事をスクレイピングで作成する', :admin_input_url, class: 'btn btn-info' %>
+
+<div>
+  <%= render 'table' %>
+</div>
