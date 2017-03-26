@@ -23,5 +23,8 @@ Rails.application.routes.draw do
     root 'dashboard#index', as: :root
     get 'login' => 'sessions#new', as: :login
     resource :session, only: [ :create, :destroy ]
+    resources :articles
+    get 'input_url' => 'articles#input_url'
+    post 'scrape_url' => 'articles#scrape_url'
   end
 end

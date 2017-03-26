@@ -24,6 +24,8 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'mail-iso-2022-jp'
 gem 'fog'
+gem 'capybara'
+gem 'poltergeist', require: 'capybara/poltergeist'
 
 group :development, :test do
   gem 'byebug'
@@ -40,7 +42,6 @@ group :development do
 end
 
 group :test do
-  gem 'capybara'
   gem 'database_cleaner'
   gem 'launchy'
   gem 'selenium-webdriver'

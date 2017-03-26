@@ -1,0 +1,10 @@
+<% @title = '記事をスクレイピングで作成' %>
+<h2><%= @title %></h2>
+
+<%= form_for @article, url: '/admin/scrape_url' do |f| %>
+  <div class="form-group">
+    <%= f.label :site_url %>
+    <%= f.text_field :site_url %>
+  </div>
+  <%= f.submit '記事をスクレイピングで作成する', class: 'btn btn-info' %>
+<% end %>

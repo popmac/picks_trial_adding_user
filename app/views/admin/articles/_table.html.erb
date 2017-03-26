@@ -1,0 +1,36 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>URL</th>
+      <th>引用サイト名</th>
+      <th>タイトル</th>
+      <th>説明文</th>
+      <th>画像</th>
+      <th>公開するか</th>
+      <th>アクション</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |a| %>
+      <tr>
+        <td><%= a.id %></td>
+        <td><%= a.site_url %></td>
+        <td><%= a.site_name %></td>
+        <td><%= a.title %></td>
+        <td><%= a.description %></td>
+        <% if a.picture.blank? %>
+          <td><%= image_tag("sample-article-image.png", class: 'site-image') %></td>
+        <% else %>
+          <td><%= image_tag("#{a.picture}", class: 'site-image') %></td>
+        <% end %>
+        <td><%= a.published %></td>
+        <td>
+          <%= link_to '編集', edit_admin_article_path(a) %>
+          <%= link_to '削除', "/admin/articles/#{a.id}", method: :delete,
+            data: { confirm: '本当に削除してよろしいですか？この操作は取り消せません'} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
