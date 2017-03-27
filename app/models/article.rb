@@ -11,8 +11,10 @@
 #  published   :boolean          default("0"), not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  category_id :integer
 #
 
 class Article < ApplicationRecord
   # mount_uploader :picture, ArticlePictureUploader
+  belongs_to :category
 end

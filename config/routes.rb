@@ -26,5 +26,6 @@ Rails.application.routes.draw do
     resources :articles
     get 'input_url' => 'articles#input_url'
     post 'scrape_url' => 'articles#scrape_url'
+    resources :categories
   end
 end
