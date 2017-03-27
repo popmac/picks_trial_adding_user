@@ -10,4 +10,16 @@
 #
 
 class Category < ApplicationRecord
+  belongs_to :article
+  validates :name, uniqueness: true
+  validates :sort_order, uniqueness: true
+
+  def last_sort_order
+    if Category.exists?
+      last_category = Category.order(sort_order: :asc).last
+      last_category.sort_order + 1
+    else
+      1
+    end
+  end
 end

@@ -1,0 +1,14 @@
+<% @title = 'カテゴリ編集' %>
+<h2><%= @title %></h2>
+
+<%= form_for @category, :url => {:controller => :categories, :action => :update} do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sort_order %>
+    <%= f.text_field :sort_order %>
+  </div>
+  <%= f.submit 'カテゴリを更新' %>
+<% end %>

@@ -1,0 +1,24 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>カテゴリ名</th>
+      <th>表示の順番</th>
+      <th>アクション</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |c| %>
+      <tr>
+        <td><%= c.id %></td>
+        <td><%= c.name %></td>
+        <td><%= c.sort_order %></td>
+        <td>
+          <%= link_to '編集', edit_admin_category_path(c) %>
+          <%= link_to '削除', "/admin/categories/#{c.id}", method: :delete,
+            data: { confirm: '本当に削除してよろしいですか？この操作は取り消せません'} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,10 @@
+<% @title = 'カテゴリ作成' %>
+<h2><%= @title %></h2>
+
+<%= form_for @category, url: '/admin/categories' do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.submit 'カテゴリを作成' %>
+<% end %>
