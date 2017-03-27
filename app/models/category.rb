@@ -10,7 +10,7 @@
 #
 
 class Category < ApplicationRecord
-  belongs_to :article
+  has_many :articles
   validates :name, uniqueness: true
   validates :sort_order, uniqueness: true
 

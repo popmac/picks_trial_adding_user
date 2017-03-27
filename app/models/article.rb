@@ -16,4 +16,5 @@
 
 class Article < ApplicationRecord
   # mount_uploader :picture, ArticlePictureUploader
+  belongs_to :category
 end

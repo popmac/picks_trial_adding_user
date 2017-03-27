@@ -70,7 +70,7 @@ class Admin::ArticlesController < Admin::Base
   def article_params
     params.require(:article).permit(
       :site_url, :site_name, :title,
-      :description, :picture, :published
+      :description, :picture, :category_id, :published
     )
   end
 
